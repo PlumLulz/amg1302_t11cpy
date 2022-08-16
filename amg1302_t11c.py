@@ -17,7 +17,7 @@ def amg1302_t11c(serial):
 
     moduli = []
     for i in range(0,8):
-        moduli.append(md52.digest()[i] % 26)
+        moduli.append(digest2[i] % 26)
     key = ""
     for i in moduli:
         key += chr(i + 97)
@@ -33,7 +33,7 @@ def amg1302_t11c(serial):
             key = "%s%s%s" % (key[:i], letter, key[i+1:])
     print(key)
 
-parser = argparse.ArgumentParser(description='Zykgen WPA keygen. (Zyxel VMG8823-B50B)')
+parser = argparse.ArgumentParser(description='amg1302_t11c Keygen')
 parser.add_argument('serial', help='Serial Number')
 args = parser.parse_args()
 
