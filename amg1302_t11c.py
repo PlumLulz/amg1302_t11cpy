@@ -22,11 +22,10 @@ def amg1302_t11c(serial):
     for i in moduli:
         key += chr(i + 97)
 
-
     base = digest2[0] * 256 + digest2[1]
     replacement_charset = 'abcdefghijkmnopqrstuvwxyz'
 
-    for i in range(0, 7):
+    for i in range(0, 8):
         if key[i] == "l":
             substitute = base % 25
             letter = replacement_charset[substitute]
